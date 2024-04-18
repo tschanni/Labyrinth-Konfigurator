@@ -1,5 +1,5 @@
 
-# Labyrinth-Konfigurator
+# Labyrinth-Konfigurator 🕹️
 
 Dieses Projekt bietet die Möglichkeit, eigene Labyrinthe zu konfigurieren und diese dann in einem Spiel zu erkunden. Die Anwendung ermöglicht die Konfiguration von Bodenplatten, Hindernissen, dem Ziel und dem Charakter selbst. Bei Registrierung ist es ebenfalls möglich, Highscores aufzustellen und sich mit anderen Mitgliedern zu vergleichen.
 
@@ -12,14 +12,16 @@ Dieses Projekt verwendet folgende Technologien:
 -   **Angular**: Wird verwendet, um die Benutzeroberfläche der Anwendung zu erstellen
 -   **Unity**: Wird verwendet, um das Labyrinth-Spiel zu erstellen
 
-## Installation
+## Installation 💾
 
 Im Folgenden wird erklärt, wie Sie das Projekt lokal ausführen können. 
 
-### Repository klonen
+### Repository klonen 📥
 Beginnen Sie damit, das Repository zu Klonen, indem Sie es entweder aus GitLab direkt herunterladen oder folgenden Befehl ausführen:
 
-    git clone https://git.thm.de/ymlr58/labyrinth-konfigurator.git
+```bash
+    git clone https://github.com/tschanni/Labyrinth-Configurator.git
+```
 
 ### Ziel-Backend wählen
 Sie können mit dem gleichen Frontend entweder das **.NET** oder das **NestJS** Backend verwenden. Beachten Sie bitte, dass immer nur eines der beiden Backends gleichzeitig ausgeführt werden sollte und die Backends verschiedene Datenbanken verwenden.
@@ -57,7 +59,7 @@ Navigieren Sie im Angular Projekt zur Datei `Konfigurator-Frontend/src/swagger/a
 - Dateien in den Ordern Models (.NET) und Entities (NestJS) stellen eine Datenbanktabelle als Klasse im Programmcode dar
 - Dateien im Order DTOs (Data Transfer Objects) enthalten die Datentypen, die für Kommunikation zwischen Client und Server genutzt werden
 
-## Benutzung
+## Benutzung 🗺️
 
 Nachdem Sie die Anwendung installiert und gestartet haben, können Sie eigene Labyrinth-Konfigurationen erstellen und spielen.
 
