@@ -1,0 +1,24 @@
+<div>
+  <div class="view">
+    <div *ngFor="let row of this.obstacles; let x=index" class="row">
+        <div *ngFor="let coloumn of this.obstacles[x]; let y=index" class="coloumn">
+            <button *ngIf="getPositionText(x,y) == ' '">
+                <img src="data:image/png;base64, {{tilePic}}">
+            </button>
+            <button *ngIf="getPositionText(x,y) == 'S'">
+                <img src="data:image/png;base64, {{tilePic}}">
+                <img class="imgforeground" src="data:image/png;base64, {{startPic}}">
+            </button>
+            <button *ngIf="getPositionText(x,y) == 'Z'">
+                <img src="data:image/png;base64, {{tilePic}}">
+                <img class="imgforeground" src="data:image/png;base64, {{targetPic}}">
+            </button>
+            <button *ngIf="getPositionText(x,y) == 'X'">
+                <img src="data:image/png;base64, {{tilePic}}">
+                <img class="imgforeground" src="data:image/png;base64, {{obstaclePic}}">
+            </button>
+        </div>
+    </div>
+  </div>
+  
+</div>

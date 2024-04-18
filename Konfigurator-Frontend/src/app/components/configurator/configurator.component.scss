@@ -1,0 +1,62 @@
+/**
+  Default Markup
+**/
+
+body {
+  background: #F0E5E1 ;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+  .container{
+    margin-bottom: 10px;
+  }
+}
+
+/**
+  Component
+**/
+
+label {
+    width: 100%;
+}
+
+.card-input-element {
+    display: none;
+}
+
+.card-input {
+    margin: 10px;
+    padding: 0px;
+}
+
+.card-input:hover {
+    cursor: pointer;
+}
+
+.card-input-element:checked + .card-input {
+     box-shadow: 0 0 1px 1px #2ecc71;
+}
+
+
+.form-control{
+  width: 50%;
+}
+
+.center {
+  text-align: center;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.playAndUpload{
+  display: flex;
+  justify-content: end;
+  gap: 2rem;
+  flex-direction: row;
+}
+

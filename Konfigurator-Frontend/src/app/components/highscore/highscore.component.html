@@ -1,0 +1,14 @@
+<table *ngIf="this.getHighscores().length > 0">
+    <tr>
+        <th>Nr.</th>
+        <th>Name</th>
+        <th>Score</th>
+        <th>Date</th>
+    </tr>
+    <tr *ngFor="let score of getHighscores(); let i = index">
+        <td>{{i+1}}</td>
+        <td>{{score.name}}</td>
+        <td>{{score.score}}</td>
+        <td>{{score.date| date:'dd.MM.yy HH:mm'}}</td>
+    </tr>
+</table>

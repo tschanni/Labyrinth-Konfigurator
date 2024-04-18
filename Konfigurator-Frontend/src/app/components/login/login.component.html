@@ -1,0 +1,42 @@
+<body class="text-center">
+  <div class="container my-5">
+      <div class="row p-3 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+          <main class="form-signin w-100 m-auto">
+            <div *ngIf="!isLoggedIn; else loggedIn">
+              <form [formGroup]="loginForm" novalidate>
+                <img class="mb-4" src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/3158951/maze-clipart-xl.png" alt="" width="64" height="42">
+                <h1 class="h3 mb-3 fw-normal">Sign-In</h1>
+
+                <div class="form-floating">
+                  <input type="username" class="form-control" id="floatingInput" placeholder="User" formControlName="userInput">
+                  <label for="floatingInput">Username</label>
+                </div>
+                <div class="form-floating">
+                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="passwordInput">
+                  <label for="floatingPassword">Password</label>
+                </div>
+                
+                <div *ngIf="errorMessage != ''">
+                  <p class="errorText">{{errorMessage}}</p>
+                </div>
+                <div class="checkbox mb-3">
+                  <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                  </label>
+                </div>
+                <button (click)="loginUser()" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                <p class="mt-5 mb-3 text-muted">&copy; 2022–2023</p>
+              </form>
+            </div>
+            <ng-template #loggedIn>
+              <img class="mb-4" src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/3158951/maze-clipart-xl.png" alt="" width="64" height="42">
+              <h1 class="h3 mb-3 fw-normal">Logged In:</h1>
+              <h1> {{ currentUser }} </h1>
+              &nbsp;
+              <button (click)="logoutUser()" class="w-100 btn btn-lg btn-primary" type="submit">Logout</button>
+              <p class="mt-5 mb-3 text-muted">&copy; 2022–2023</p>
+            </ng-template>
+            </main>
+      </div>
+  </div>
+</body>

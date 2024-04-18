@@ -1,0 +1,59 @@
+.row {
+  display: flex;
+  flex-wrap: nowrap;
+  width: auto;
+  margin: auto;
+  padding: 0;
+}
+
+img {
+position: relative;
+z-index: 1;
+
+image-rendering: pixelated;
+width: 100%;
+}
+
+.imgforeground {
+  position: relative;
+  z-index: 2;
+  margin-top: -170%;
+}
+
+.view {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.coloumn {
+  display: flex;
+  flex-wrap: nowrap;
+
+  width: auto;
+  margin: 0;
+  padding: 0;
+
+}
+
+button{
+  width: 40px;
+  height: 40px;
+  border: none;
+  padding: 0px;
+}
+
+.objectButton{
+  width: 40px;
+  height: 40px;
+  border: none;
+  padding: 0px;
+  margin: 10px;
+}
+
+
+.errorText {
+color: red;
+}

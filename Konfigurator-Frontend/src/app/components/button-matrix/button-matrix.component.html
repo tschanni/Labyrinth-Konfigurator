@@ -1,0 +1,89 @@
+
+<div class="text-center container">
+    <p class="lead text-muted">Choose which object you want to place</p>
+    <button class="objectButton" (click)="setState(0)"><img src="data:image/png;base64, {{startPic}}"></button>
+    <button class="objectButton" (click)="setState(1)"><img src="data:image/png;base64, {{targetPic}}"></button>
+    <button class="objectButton" (click)="setState(2)"><img src="data:image/png;base64, {{obstaclePic}}"></button>
+    <p class="errorText" *ngIf="!this.checkMap()[0]">Invalid Map because {{this.checkMap()[1]}}</p>
+    <p *ngIf="this.checkMap()[0]">This map is valid and playable</p>
+</div>
+
+
+<div class="text-center">
+    <div *ngIf="this.state == 0">
+        <h1>Set starting position<img class="objectButton" src="data:image/png;base64, {{startPic}}"></h1>
+        <div class="view">
+            <div *ngFor="let row of this.obstacles; let x=index" class="row">
+                <div *ngFor="let coloumn of this.obstacles[x]; let y=index" class="coloumn">
+                    <button *ngIf="getPositionText(x,y) == ' '" (click)="setStart(x,y)">
+                        <img src="data:image/png;base64, {{tilePic}}">
+                    </button>
+                    <button *ngIf="getPositionText(x,y) == 'S'">
+                        <img src="data:image/png;base64, {{tilePic}}">
+                        <img class="imgforeground" src="data:image/png;base64, {{startPic}}">
+                    </button>
+                    <button *ngIf="getPositionText(x,y) == 'Z'">
+                        <img src="data:image/png;base64, {{tilePic}}">
+                        <img class="imgforeground" src="data:image/png;base64, {{targetPic}}">
+                    </button>
+                    <button *ngIf="getPositionText(x,y) == 'X'">
+                        <img src="data:image/png;base64, {{tilePic}}">
+                        <img class="imgforeground" src="data:image/png;base64, {{obstaclePic}}">
+                    </button>
+                </div>
+            </div>
+        </div>        
+    </div>
+
+    <div *ngIf="this.state == 1">
+        <h1>Set target position<img class="objectButton" src="data:image/png;base64, {{targetPic}}"></h1>
+        <div class="view">
+            <div *ngFor="let row of this.obstacles; let x=index" class="row">
+                <div *ngFor="let coloumn of this.obstacles[x]; let y=index" class="coloumn">
+                    <button *ngIf="getPositionText(x,y) == ' '" (click)="setEnd(x,y)">
+                        <img src="data:image/png;base64, {{tilePic}}">
+                    </button>
+                    <button *ngIf="getPositionText(x,y) == 'S'">
+                        <img src="data:image/png;base64, {{tilePic}}">
+                        <img class="imgforeground" src="data:image/png;base64, {{startPic}}">
+                    </button>
+                    <button *ngIf="getPositionText(x,y) == 'Z'">
+                        <img src="data:image/png;base64, {{tilePic}}">
+                        <img class="imgforeground" src="data:image/png;base64, {{targetPic}}">
+                    </button>
+                    <button *ngIf="getPositionText(x,y) == 'X'">
+                        <img src="data:image/png;base64, {{tilePic}}">
+                        <img class="imgforeground" src="data:image/png;base64, {{obstaclePic}}">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="this.state == 2">
+        <h1>Set obstacles<img class="objectButton" src="data:image/png;base64, {{obstaclePic}}"></h1>
+        <div class="view">
+            <div *ngFor="let row of this.obstacles; let x=index" class="row">
+                <div *ngFor="let coloumn of this.obstacles[x]; let y=index" class="coloumn">
+                    <button *ngIf="getPositionText(x,y) == ' '" (click)="changeObstacle(x,y)">
+                        <img src="data:image/png;base64, {{tilePic}}">
+                    </button>
+                    <button *ngIf="getPositionText(x,y) == 'S'">
+                        <img src="data:image/png;base64, {{tilePic}}">
+                        <img class="imgforeground" src="data:image/png;base64, {{startPic}}">
+                    </button>
+                    <button *ngIf="getPositionText(x,y) == 'Z'">
+                        <img src="data:image/png;base64, {{tilePic}}">
+                        <img class="imgforeground" src="data:image/png;base64, {{targetPic}}">
+                    </button>
+                    <button *ngIf="getPositionText(x,y) == 'X'" (click)="changeObstacle(x,y)">
+                        <img src="data:image/png;base64, {{tilePic}}">
+                        <img class="imgforeground" src="data:image/png;base64, {{obstaclePic}}">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="space"></div>

@@ -1,0 +1,71 @@
+.row {
+    display: flex;
+    width: auto;
+    margin: auto;
+    padding: 0;
+    flex-wrap: nowrap;
+
+}
+
+img {
+  position: relative;
+  z-index: 1;
+
+  image-rendering: pixelated;
+  width: 100%;
+}
+
+.imgforeground {
+    position: relative;
+    z-index: 2;
+    margin-top: -170%;
+  }
+
+.coloumn {
+    display: flex;
+    flex-wrap: nowrap;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.view {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+button{
+    width: 40px;
+    height: 40px;
+    border: none;
+    padding: 0px;
+}
+
+button:hover{
+    border-color: black;
+    border-style: outset;
+    border-width: 2px;
+    color: blue;
+}
+
+.objectButton{
+    width: 40px;
+    height: 40px;
+    border: none;
+    padding: 0px;
+    margin: 10px;
+}
+
+
+.errorText {
+  color: red;
+}
+
+.space {
+  min-height: 50px;
+}

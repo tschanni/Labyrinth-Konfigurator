@@ -1,0 +1,14 @@
+﻿################################################################################
+# Diese .gitignore-Datei wurde von Microsoft(R) Visual Studio automatisch erstellt.
+################################################################################
+
+/.vs/labyrinth-konfigurator/v17
+/LabyrinthKonfigurator.db-shm
+/LabyrinthKonfigurator.db-wal
+/.vs
+.DS_Store
+Konfigurator-nestjs-Backend/konfigurator-nestjs-backend/.eslintrc.js
+Konfigurator-nestjs-Backend/konfigurator-nestjs-backend/.prettierrc
+Konfigurator-nestjs-Backend/LabyrinthKonfigurator.db-shm
+Konfigurator-nestjs-Backend/LabyrinthKonfigurator.db-wal
+

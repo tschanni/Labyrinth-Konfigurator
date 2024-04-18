@@ -1,0 +1,32 @@
+<body>
+    <main>
+      <div class="container">
+        <div class="row justify-content-md-center justify-content-xs-center">
+  
+          <div class="col-5 col-sm-4 col-md-3 col-lg-2 nopad" *ngFor="let card of this.getCards(); let i=index">
+            <div *ngIf="this.clicked == card.title" class="card hover-zoomin clicked" >
+              <img class="card-img-top" src= "data:image/png;base64, {{card.img}}" alt="Card image cap">
+              <a (click)="toggle($event)" id={{card.title}} class="stretched-link"></a>
+            </div>
+            <div *ngIf="this.clicked != card.title" class="card hover-zoomin">
+              <img class="card-img-top" src= "data:image/png;base64, {{card.img}}" alt="Card image cap">
+              <a (click)="toggle($event)" id={{card.title}} class="stretched-link"></a>
+
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </main>
+  
+    <footer class="text-muted py-5">
+      <div class="container">
+        <p class="float-end mb-1">
+        </p>
+      </div>
+    </footer>
+  
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  
+  </body>
+  

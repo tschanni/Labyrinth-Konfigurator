@@ -1,0 +1,12 @@
+<div *ngFor="let item of liste">
+  <div (click)="this.storageService.redirectIfLoggedIn('game/'+item.id)">
+    <div class="headline">
+      <h1>{{item.name}}</h1>
+      <h2>  von {{item.creator}}</h2>
+    </div>    
+    <div class="MapCard" >
+      <app-game-map-viewer class="center" [gameId]="item.id" ></app-game-map-viewer>
+      <app-highscore [mapId]="item.id" class="highscore"></app-highscore>
+    </div>
+  </div>  
+</div>

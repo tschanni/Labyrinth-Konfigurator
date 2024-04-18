@@ -1,0 +1,36 @@
+
+
+.MapCard{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  align-items: flex-start;
+}
+
+@media only screen and (max-width: 640px) {
+  .MapCard{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-x: auto;
+    align-items: flex-start;
+  }
+}
+
+.highscore{
+  overflow-y: auto;
+  max-height: 360px;
+  flex-grow: 1;
+  min-width: 0px;
+}
+
+.headline{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1rem;
+}

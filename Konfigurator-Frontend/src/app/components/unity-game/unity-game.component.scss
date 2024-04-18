@@ -1,0 +1,55 @@
+.mobileWarning{
+  display: none;
+}
+
+@media only screen and (max-width: 640px) {
+  .game{
+    display: none;
+  }
+  .mobileWarning{
+    display: inline;
+  }
+}
+
+.game{
+  max-width: 100% !important ;
+  max-height: 100% !important ;
+  height: min(81vh, 81vw) !important ;
+  width: min(144vh, 144vw ) !important ;
+  height: min(81vh, 81vw) !important ;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.gameContainer {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: flex;
+}
+
+
+
+.phone {
+  height: 50px;
+  width: 100px;
+  border: 3px solid black;
+  border-radius: 10px;
+  animation: rotate 1.5s ease-in-out infinite alternate;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  /* display: none; */
+}
+
+@keyframes rotate {
+  0% {
+		transform: rotate(0deg)
+	}
+	50% {
+		transform: rotate(-90deg)
+	}
+	100% {
+		transform: rotate(-90deg)
+	}
+}

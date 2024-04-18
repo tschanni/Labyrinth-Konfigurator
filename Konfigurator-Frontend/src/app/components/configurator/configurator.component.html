@@ -1,0 +1,39 @@
+<section class="text-center container">
+  <div class="row py-lg-5">
+    <div class="col-md-8 mx-auto">
+      <img class="mb-4" src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/3158951/maze-clipart-xl.png" alt="" width="128" height="84">
+      <h1 class="fw-light">{{text[step - 1][0]}}</h1>
+      <p class="lead text-muted">{{text[step  - 1][1]}}</p>
+      &nbsp;
+      <div class="row justify-content-around">
+        <div class="col-4">
+          <button type="button" *ngIf="step != 7" class="btn btn-lg btn-primary" [disabled]="!possibleStep(this.step -1)" (click)="setStep(this.step -1)">Previous Step</button>
+        </div>
+        <div *ngIf="step != 6" class="col-4">
+          <button type="button" *ngIf="step < 5" class="btn btn-lg btn-primary" [disabled]="!possibleStep(this.step +1)" (click)="setStep(this.step +1)">Next Step</button>
+          <div data-toggle="tooltip" data-placement="top" title="{{this.playableMessage}}">
+            <button type="button" *ngIf="step == 5" class="btn btn-lg btn-primary" [disabled]="!playable()" (click)="setStep(this.step+1)">Next Step</button>
+          </div>          
+        </div>
+        <div *ngIf="step == 6" class="col-8 playAndUpload">
+          <button type="button" *ngIf="this.storageService.isLoggedIn()" class="btn btn-lg btn-primary" [disabled]="mapName == ''" (click)="uploadGame()">Upload and Play</button>
+          <div data-toggle="tooltip" data-placement="top" title="You have to login for uploading a game">
+            <button type="button" *ngIf="!this.storageService.isLoggedIn()" class="btn btn-lg btn-primary" [disabled]="true" (click)="uploadGame()">Upload and Play</button>
+          </div>
+          <button type="button" *ngIf="step == 6" class="btn btn-lg btn-primary" [disabled]="mapName == ''" (click)="playGame()" data-toggle="tooltip" data-placement="top" title="No Upload, just play the game locally">Play</button>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-choose-card *ngIf="this.step < 5" [state]="this.step"  [clicked]="this.getChosen()"></app-choose-card>
+
+<app-button-matrix *ngIf="manageButtonMatrix()" [hidden]="this.step != 5" (playableEvent)="setPlayable($event)"></app-button-matrix>
+
+<div class="center" *ngIf="this.step == 6">
+  <h1>Name your Level</h1>
+  <input [(ngModel)]="mapName" #ctrl="ngModel" required class="form-control center form-control-light text-bg-light" placeholder="Name eingeben" aria-label="Search">
+
+  <app-game-map-viewer [gameId]="-1" ></app-game-map-viewer>
+</div>

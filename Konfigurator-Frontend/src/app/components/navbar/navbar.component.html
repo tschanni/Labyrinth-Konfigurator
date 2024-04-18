@@ -1,0 +1,29 @@
+<header class="p-3 text-bg-dark header">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+            <img width="64" height="42" src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/3158951/maze-clipart-xl.png" />
+        </a>
+
+        <div class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 centertext">
+          <a routerLink="/" class="nav-link px-2 text-white">Home</a>
+          <a routerLink="configurator" class="nav-link px-2 text-white">Configurator</a>
+          <a routerLink="game" class="nav-link px-2 text-white">Game</a>
+          <a (click)="this.storageService.redirectIfLoggedIn('gameslist')" class="nav-link pointer px-2 text-white">Created Maps</a>
+          <a routerLink="about" class="nav-link px-2 text-white">About</a>
+          <div class="text-end buttons" *ngIf="!storageService.isLoggedIn()">
+            &nbsp;
+            <button routerLink= "login" type="button" class="btn btn-outline-light me-2">Login</button>
+            &nbsp;
+            <button routerLink= "signup" type="button" class="btn btn-warning" >Sign-up</button>
+          </div>
+          <div class="text-end" *ngIf="storageService.isLoggedIn()">
+            &nbsp;
+            <button routerLink= "login" type="button" class="btn btn-outline-light me-2">{{storageService.getUser()}}</button>
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+  </header>

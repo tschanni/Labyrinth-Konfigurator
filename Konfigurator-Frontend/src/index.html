@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Maze Configurator</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
+
+<script>
+  function UnityLoaded () {
+    //let name = prompt('What is your name?');
+    //let message = 'Hello ' + name + '!';
+    //alert(message);
+    window.my.namespace.unityLoaded();
+  }
+
+  function UnityAddHighscore (arg) {
+    //let name = prompt('What is your name?');
+    //let message = 'Hello ' + name + '!';
+    //alert(message);
+    window.my.namespace.unityAddHighscore(arg);
+  }
+</script>
